@@ -30,7 +30,6 @@ int erroContador = 0;
 int pacotesEnviados = 0;
 int retornoRecebido = 0;
 
-const uint8_t validBytes[] = {0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x90, 0x91, 0x92, 0x93};  // Vetor de hexadecimais válidos
 const int validBytesSize = sizeof(validBytes) / sizeof(validBytes[0]);
 
 bool isValidSecondByte(uint8_t byte) {
@@ -86,11 +85,11 @@ void TaskControladoraToLoRa(void *pvParameters) {
     if (mySerial.available()) {
       uint8_t byte = mySerial.read();
       
-      if (byte == 0xAB) {
+      if (byte == ) {
           bufferIndex = 0;
           buffer[bufferIndex++] = byte;
       } 
-      else if (byte == 0xCD && bufferIndex > 0 && buffer[0] == 0xAB) {
+      else if (byte ==  && bufferIndex > 0 && buffer[0] == ) {
           buffer[bufferIndex++] = byte;
   
           retornoControladora = "";
