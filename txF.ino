@@ -26,7 +26,6 @@ String retornoStr = "";
 String rxData;
 volatile bool rxFlag = false;
 
-const uint8_t validBytes[] = {0x20, 0x11, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x29, 0xE1, 0xDE, 0xF1};  // Vetor de hexadecimais válidos
 const int validBytesSize = sizeof(validBytes) / sizeof(validBytes[0]);
 
 bool isValidSecondByte(uint8_t byte) {
@@ -53,10 +52,10 @@ void taskSend(void *pvParameters) {
   while (true) {
     if (mySerial.available()) {
       uint8_t byte = mySerial.read();
-      if (byte == 0xAB) {
+      if (byte == ) {
         bufferIndex = 0;
         buffer[bufferIndex++] = byte;
-      } else if (byte == 0xCD && bufferIndex > 0 && buffer[0] == 0xAB) {
+      } else if (byte ==  && bufferIndex > 0 && buffer[0] == ) {
         buffer[bufferIndex++] = byte;
         
         // Preparando a string para exibição
