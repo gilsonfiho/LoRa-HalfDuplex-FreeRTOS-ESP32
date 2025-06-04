@@ -45,12 +45,10 @@ void displayUpdate() {
   display.clear();
   display.drawString(0, 0, "Recebendo Pacote:");
   display.drawString(0, 10, pacoteStr);
-  display.drawString(0, 20, "Retorno da Controladora:");
-  display.drawString(0, 30, retornoControladora);
-  display.drawString(0, 40, "QP: " + String(pacotesEnviados));
+  display.drawString(0, 40, "QP: " + String(pct:));
   display.drawString(70, 40, "T: " + String(millis() / 1000));
   display.drawString(0, 50, "ErrosE1: " + String(erroContador));
-  display.drawString(70, 50, "(%): " + String((float)erroContador / pacotesEnviados * 100, 2));
+  display.drawString(70, 50, "(%): " + String((float)erroContador / pctesEnviados * 100, 2));
   display.display();
 }
 
